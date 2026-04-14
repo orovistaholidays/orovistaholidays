@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #1e2836;
+  --font-headline: var(--font-playfair);
+  --font-body: var(--font-plus-jakarta-sans);
+  
+  --color-primary: #8dd6d6;
+  --color-primary-container: #bde0e0;
+  --color-on-primary: #1e2836;
+  
+  --color-secondary: #dce2e5;
+  --color-secondary-container: #a9b0b7;
+  --color-on-secondary: #1e2836;
+  
+  --color-tertiary: #4d5c6c;
+  --color-tertiary-container: #6a7684;
+  --color-on-tertiary: #ffffff;
+
+  --color-surface: #ffffff;
+  --color-on-surface: #1e2836;
+  
+  --color-border: #dce2e5;
+  --color-input: #dce2e5;
+  --color-ring: #8dd6d6;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-xxl: 2.5rem;
+
+  --shadow-premium-sm: 0 4px 20px -5px rgba(0, 0, 0, 0.03);
+  --shadow-premium: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  --shadow-premium-lg: 0 20px 60px -15px rgba(0, 0, 0, 0.08);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1e2836;
+  --primary: #8dd6d6;
+  --primary-foreground: #1e2836;
+  --border: #dce2e5;
+}
+
+.dark {
+  --background: #1e2836;
+  --foreground: #dce2e5;
+  --primary: #8dd6d6;
+  --primary-foreground: #1e2836;
+  --border: #4d5c6c;
+}
+
+@utility premium-card {
+  @apply bg-white border border-border/50 shadow-premium transition-all duration-500 hover:shadow-premium-lg;
+}
+
+@utility glass-morphism {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+@utility nav-link {
+  @apply text-foreground/70 transition-colors duration-300 hover:text-primary relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-body;
+  }
+  h1, h2, h3, h4, .font-display {
+    @apply font-headline tracking-tight;
+  }
+}

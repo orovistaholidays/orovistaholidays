@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SERENE | Curated Travel Experiences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#d8e3fb",
+                      "error": "#a83836",
+                      "on-surface-variant": "#596064",
+                      "on-background": "#2c3437",
+                      "secondary-container": "#c4e7ff",
+                      "on-secondary": "#f4faff",
+                      "primary-fixed-dim": "#cad5ed",
+                      "error-container": "#fa746f",
+                      "surface-container": "#eaeff2",
+                      "on-primary": "#f8f8ff",
+                      "on-error": "#fff7f6",
+                      "on-tertiary-container": "#00465d",
+                      "on-secondary-container": "#005878",
+                      "secondary-fixed-dim": "#a2dcff",
+                      "surface": "#f7f9fb",
+                      "on-tertiary-fixed": "#003041",
+                      "surface-container-low": "#f0f4f7",
+                      "secondary-dim": "#005a7a",
+                      "on-error-container": "#6e0a12",
+                      "on-primary-fixed": "#354053",
+                      "surface-variant": "#dce4e8",
+                      "surface-bright": "#f7f9fb",
+                      "background": "#f7f9fb",
+                      "outline-variant": "#acb3b7",
+                      "secondary": "#00668b",
+                      "outline": "#747c80",
+                      "tertiary-container": "#7bd1fa",
+                      "inverse-on-surface": "#9a9d9f",
+                      "tertiary-fixed-dim": "#6cc3eb",
+                      "on-tertiary-fixed-variant": "#004f69",
+                      "tertiary-dim": "#005a77",
+                      "primary": "#545f74",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#515c70",
+                      "inverse-primary": "#dae6fe",
+                      "surface-container-high": "#e3e9ed",
+                      "on-secondary-fixed-variant": "#006286",
+                      "inverse-surface": "#0b0f10",
+                      "on-secondary-fixed": "#00445e",
+                      "on-surface": "#2c3437",
+                      "primary-fixed": "#d8e3fb",
+                      "error-dim": "#67040d",
+                      "primary-dim": "#485367",
+                      "on-tertiary": "#f3faff",
+                      "tertiary": "#006787",
+                      "secondary-fixed": "#c4e7ff",
+                      "tertiary-fixed": "#7bd1fa",
+                      "surface-container-highest": "#dce4e8",
+                      "surface-tint": "#545f74",
+                      "surface-dim": "#d4dbdf",
+                      "on-primary-container": "#475266"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Noto Serif"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Plus Jakarta Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow { box-shadow: 0px 24px 48px rgba(44, 52, 55, 0.06); }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+        .hero-gradient { background: linear-gradient(135deg, #545f74 0%, #d8e3fb 100%); }
+        .text-glow { text-shadow: 0 0 30px rgba(255,255,255,0.4); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<span class="font-serif text-2xl font-bold tracking-tighter text-slate-800 dark:text-slate-100">SERENE</span>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-serif text-lg tracking-tight text-slate-900 dark:text-white border-b border-slate-400 pb-1" href="#">Destinations</a>
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Experiences</a>
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">Journal</a>
+<a class="font-serif text-lg tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-slate-700">search</button>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-medium tracking-wide hover:opacity-80 transition-opacity">Inquire</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 space-y-32">
+<!-- Hero Section -->
+<section class="px-6 md:px-12">
+<div class="relative h-[870px] rounded-xl overflow-hidden group">
+<img alt="Mist covered mountains" class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" data-alt="Wide majestic view of jagged mountain peaks covered in morning mist and soft blue atmospheric light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtj2Vx0mwZvkfFiWK6fVlP9e285vSHGnhpCdxNKGto22ixMczED2EVoUPjXb19it_TFRCof77ri9r5n7YvDlDx84m5Q_XaPV4mrrrdZ1SEWFUeEsCPdfTTzOujRMUFy2WuVrc-o28WI6-3oFbTKxz23ahMvpFlhdhz8zCy6JKHWPfklWrxik17qXB7_xGmASqlbMGdqfTSOkMZykpB4dqe4MOZb4h7wtc1c6pJrIUvwwAxbwjJVRKy1FPsDMtjP2_ydmPeYp9J8IeO"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+<span class="font-label uppercase tracking-[0.3em] text-white/90 mb-4 text-sm">Defining Intentional Travel</span>
+<h1 class="font-headline text-7xl md:text-9xl text-white font-bold tracking-tighter mb-8 text-glow">Explore</h1>
+<div class="glass-panel p-2 rounded-full flex items-center gap-4 max-w-xl w-full">
+<div class="flex-1 flex items-center px-6">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">explore</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-outline" placeholder="Where do you seek stillness?" type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-semibold flex items-center gap-2">
+                            Begin <span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Discover Section (Editorial Layout) -->
+<section class="max-w-7xl mx-auto px-6 relative">
+<div class="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+<div class="md:w-1/2 space-y-8">
+<span class="font-label text-primary uppercase tracking-widest font-bold">The Essence of Japan</span>
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight">Kyoto's Hidden<br/><span class="italic font-normal">Sanctuaries</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                        Beyond the bustling streets of Gion lies a world of profound silence. We curate exclusive access to 17th-century zen gardens and private tea ceremonies designed for contemplation.
+                    </p>
+<a class="inline-flex items-center gap-2 font-semibold text-primary group" href="#">
+                        Explore Destinations 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<div class="md:w-1/2 relative">
+<div class="rounded-lg overflow-hidden editorial-shadow transform rotate-2">
+<img alt="Kyoto Temple" class="w-full h-[500px] object-cover" data-alt="Traditional Japanese pagoda peaking through vibrant autumn maple leaves in Kyoto at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_3ujr_MqbsbpT3ZsGsh1NdTfLJMar4DDylbnhAIWngAU5ZWv_DpPFE9BYGQfZ0wqsb3SIOkAkG-zVqwoREkr-Vhu5QdnLaO3gQ5oS6X1DG7d0ukCnXrNvQr9PwTk4ISg7Q6iHwiKZlVeedMOkt_sZoTjK8PkOvrMbJseCzunRU-FuBu5XkOdO6_AQQ2Dy7CdaXH9QAlkAWUBTqOsdnBtk_9xOpw4C58ycHVms-mq_dk2O0gRUTc5Qy3mQ3Fd-2BB8ndccnteM1aaH"/>
+</div>
+<div class="absolute -bottom-12 -left-12 w-64 h-80 rounded-lg overflow-hidden editorial-shadow border-8 border-white transform -rotate-3 hidden md:block">
+<img alt="Tea ceremony" class="w-full h-full object-cover" data-alt="Close up of a traditional Japanese matcha tea bowl on a wooden mat with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVADjeOhoM-j8ey6TTTHdm6_GnakMpkoGwlMsVGJ0WscmvNu43WJpXl7GfKTjovNWf7u2-7kiFaNnaw900vM9gq4y1fZR2ygoP_4T2_kQZSlLpbjMkDOxYqS4NelUzPbbWmiRPiapzNTuM2vo_iXMvrAWAiwzNx4kJ1oqEnZrdVZdcjtu9R_Xo0GViA6_hCFo6ov0WLSbiVfm7W78Nwc00TVbFCbuS8GYqOWSyaA-jCp48jc8eNnGPxGbBUyuxkBP597csIS4orKQt"/>
+</div>
+</div>
+</div>
+<!-- Wavy Path -->
+<svg class="absolute -bottom-40 left-0 w-full h-32 text-outline-variant/20 fill-none" preserveaspectratio="none" viewbox="0 0 1440 100">
+<path d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</section>
+<!-- Stats Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="space-y-2">
+<div class="font-headline text-5xl font-bold text-primary">72+</div>
+<div class="font-label uppercase tracking-widest text-on-surface-variant text-sm">Bespoke Destinations</div>
+</div>
+<div class="space-y-2">
+<div class="font-headline text-5xl font-bold text-primary">94%</div>
+<div class="font-label uppercase tracking-widest text-on-surface-variant text-sm">Guest Satisfaction</div>
+</div>
+<div class="space-y-2">
+<div class="font-headline text-5xl font-bold text-primary">1000+</div>
+<div class="font-label uppercase tracking-widest text-on-surface-variant text-sm">Intentional Travelers</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+<div class="rounded-xl overflow-hidden editorial-shadow h-[600px]">
+<img alt="Traveler looking at ocean" class="w-full h-full object-cover" data-alt="A lone traveler standing on a cliff edge looking over a turquoise Mediterranean sea under a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhcWAh3kQDMbZSA3m3zOU33fCehyqarv4UtkaqNeRmnNZH_vrHtmw4f9lfZAG4D-sl1QcLvWYgkj6rhkfbsNPLLL7uTjpaT195w_aQG2IXW0NqS5mCxdN7euJnEmYBgKWzTc0LdTubPijQ3JFCqtLU5PrxKx4fdHtoS8uMbjIInonw4OiCG68h5wxvo77tEs8PSc66EwxMfw7hTldpLyOMR7hp2_t9R5PlYbS8BN3NXS7LO_8tAmCn1ErxMGqIsZHzuU_Ew46m97I8"/>
+</div>
+<div class="space-y-8 relative">
+<h2 class="font-headline text-5xl leading-tight">Our Philosophy is <br/><span class="italic">Connection.</span></h2>
+<p class="text-on-surface-variant text-lg">
+                    We believe travel should be more than a checkbox. It's about the rhythm of a new city, the breath of a mountain, and the stories shared with strangers who become friends.
+                </p>
+<div class="glass-panel p-6 rounded-lg editorial-shadow flex items-center gap-4 inline-flex">
+<div class="flex -space-x-4">
+<img alt="User 1" class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Portrait of a smiling woman in nature" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPycet3UI8yxCTJl8lztEyNiopE0xV25TJd_rEc0VG-uKY19IoDBUHsy6i_EvbMQ0uwRBQQnOqG2OdUT66d2vSC9R8IL6SgcBEWW970E8LJH6fh9aqxGRuxU4T4kTbwhdpp4WTW8AdQ4uH1ZzRL5ivAvyux-Zx_S1DPMtkep1xG3XV3OsLnEbhqhsXG0yCy-ZP9Pv9Fv4WnENKMDvzaDdaTlO1MHoJWHcqrappF5lqIi1hdOmiItGS6afvSl1DDUrWK9bP8wluojnR"/>
+<img alt="User 2" class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Portrait of a man with glasses smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh0hun0ZH78Le3MRdgujUJEc5goC7G-nL_wUWTBrtqGlT7tacAYW5YYgRjubCBUgiirgFbqfzBFPk_nGBvqH9SR18fYpa33GOAoJ4FQjBjx9SmJdD1j6v5ZneoBu7psZV9vYm3smuLBPhjHkWcsXoTQjaqcY_olJmfjOVfL2DMXJlsWMQdXH7slVbSXJRnNCbOkUAvxghJ0L1HZmIVX2pXx2lFwY1Wfsu7UWp8m-4VqGURAR_3G6GYgZvW7ENfhZ50NAKiFA5BGuHd"/>
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-xs font-bold text-primary-dim border-4 border-white">+12k</div>
+</div>
+<div>
+<div class="font-bold text-on-surface">Trusted Globally</div>
+<div class="text-sm text-on-surface-variant">Join 12,000+ curious souls</div>
+</div>
+</div>
+</div>
+</section>
+<!-- App Showcase -->
+<section class="px-6 md:px-12">
+<div class="bg-secondary-container/30 rounded-xl py-24 px-8 flex flex-col md:flex-row items-center justify-around gap-16 overflow-hidden">
+<div class="md:w-1/3 space-y-6">
+<h2 class="font-headline text-4xl md:text-5xl">Seamless travel <br/>experience.</h2>
+<p class="text-on-surface-variant">Your itinerary, offline maps, and local recommendations, all in one elegantly designed interface.</p>
+<div class="flex gap-4">
+<div class="bg-on-background text-white px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer hover:opacity-90">
+<span class="material-symbols-outlined">ios</span> App Store
+                        </div>
+<div class="bg-on-background text-white px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer hover:opacity-90">
+<span class="material-symbols-outlined">play_store_installed</span> Play Store
+                        </div>
+</div>
+</div>
+<div class="relative">
+<div class="w-72 h-[560px] bg-white rounded-[3rem] border-[12px] border-slate-900 shadow-2xl relative z-10 overflow-hidden">
+<img alt="Mobile App Interface" class="w-full h-full object-cover" data-alt="Conceptual smartphone UI showing a minimalist travel itinerary with soft pastel colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_rECm683eEfYLG3ky2qVuSIDS4m8KHpEpa3r1NUrpIzMddwj0hlLHEzDG6yZ6Oycw5btAXEkVrSIU-EoaxT87jjLxdx1X8X6SW9YzC0P3MA5Fll110ctikS3ILQU8hM6xJtrs3EeZbEqbJp6P1SuQtCArtR6GYWpWB7G2cQIdpxyZxyGguuLDNPcuImgKg6o2rw_F7J4bvXIMoZpKz9CeO0khoxHUs6AN612fE7mlzFbxCScebmt7J9OFdr7o654DY2coxs3Xw_AT"/>
+</div>
+<div class="absolute -right-20 top-20 w-64 h-[480px] bg-white/40 rounded-[3rem] border-[8px] border-white/20 shadow-xl backdrop-blur-sm hidden lg:block overflow-hidden">
+<img alt="Secondary App View" class="w-full h-full object-cover opacity-50" data-alt="Blurred mountain landscape background for a mobile app screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWpgi5j95-L1_dUO12fLcmsG-21-wH8lrJGEcXr3T43PYWFBLM1usaGBHLHMhuvgObT_ZmO84ayMzLsUGiTNKaCsGiDdLweCFddkOeH9_6_7j7O6ru24XhPMrq0n4Sq7N71wQeH-We5xT9QVVxs2GfVvKBcjChGO8Ix922NSdbDDb7KgUqV2HSll4iSHGUpeYWcaBzWtEAb-4VixabnMGtyNSsCyKVWDl2mgI6BZWjVVOLkLP6A59I9jNWVcXPp-HXle92yTpHpSo3"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Destinations Showcase (Asymmetrical Bento) -->
+<section class="max-w-7xl mx-auto px-6 space-y-12">
+<div class="flex justify-between items-end">
+<h2 class="font-headline text-5xl">Curated Collections</h2>
+<button class="text-primary font-bold underline underline-offset-8 decoration-primary-container">View All Collections</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
+<div class="md:col-span-2 md:row-span-2 relative group rounded-lg overflow-hidden cursor-pointer">
+<img alt="Mount Fuji" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Mount Fuji silhouetted against a soft pink and purple dawn sky with cherry blossoms in foreground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1MGsbKndJzCmVm6rE_RCkTIl66cOC3hrL0nWpQq6-CoQ_5FlqmlZceYMHvdBPL7veQ0KJr7JDTo5JMy1daDW_mnr9NeFLs5fEsTfUIiXR9nyHFtfhsGXnGdEIb5NpiSucXaaE1bJM82la2EhTg7xcdFUG1-fnqnWqxmWQ0s4ZU3C9Vw2YS7DMDVhLmjkh1u0FApgfzgJduOBCMGuB0RL-XskFzLb4DUttPJuhzwXLmIbn54PgLR-D3iHrBqVerazftdWl11tmoKO-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-label text-xs tracking-widest opacity-80">ICONIC PEAKS</p>
+<h3 class="font-headline text-3xl">Mount Fuji, Japan</h3>
+</div>
+</div>
+<div class="md:col-span-2 relative group rounded-lg overflow-hidden cursor-pointer">
+<img alt="Hiking in Alps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Hiking trail winding through lush green alpine meadows under clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_8JTyYQ-4mE8ua_GQpXDJYJRiNvJnB5-CAiih8Cp9BAfSX7L9QYdltVT5sJOc4eIEnm0F65NRfuiTK3SeqGlNSyWMG-pkqeskYNyxWQ4CkqZ3oNLbuGW5ruj9oaAwLmlGY4zrBwUrnzaJtq_NP1UijY6gdwLidAzIDSbt1WuTSXGIJZYeEfLeZa6pQqB7UUJCf86zrCTc1E5fgNSzgdIBhSxKdYFQdO80pX3HjgyHsqsJiciWxF19LzcgdnqHb-QZN6Q9deCMxCEq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label text-xs tracking-widest opacity-80">ACTIVE</p>
+<h3 class="font-headline text-2xl">Hiking Trails</h3>
+</div>
+</div>
+<div class="relative group rounded-lg overflow-hidden cursor-pointer">
+<img alt="Climbing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Person climbing a granite rock face with dramatic light and long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy4eW9OGCmWI0T1thY2eh3boZxwchEBQ8dhgtYsgzQsCljEZUW-p3H6EAgQgEDfOZHI7p-Mo5N5Zr-FDNd6mUgzarwS6tX7sRbhdI8dSr5jEpQ2exPhrvzYBYRWwXyGrfzzwzXLyIb9hglNZUl3v6tZUZ-bXFDTwbt9N0WY5jNNeHXDDMlsNdKN8CVLNPhrgAoT2yvGBH-t7h3P8553DmkNX-C64suGW0h_AcbPH1tUvqCTxK9IZ3Ds5saaXccQBEG7EDknN-UM4jp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label text-xs tracking-widest opacity-80">ADVENTURE</p>
+<h3 class="font-headline text-xl">Rock Climbing</h3>
+</div>
+</div>
+<div class="relative group rounded-lg overflow-hidden cursor-pointer">
+<img alt="Resort" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Luxury overwater bungalow with infinity pool at dusk in the Maldives" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgUG-TAOFihN3t2AzfpKWCcC-lat2eR053QogwEqTnZZ_NZUYyaf7fRlv2AHGvhYGLwvJcj3CgSnMHDWK-IinQTf4NFTR0UiWZaJ5gIxZZxawZQgKsDCHw2_0o1NOO-6YiAc29AQ7-monScS3QfjfBVAs4bKvg1-mYKX6Z4uIBqbGfuokJwAcxoF0O_7P3mK-F8x99R4-3kI8UQm71Fk_XLNCLQj99T2SxN-3B9jsKDsDhcQf5j9iVxRJJlYa5b-VMj7VqKtVEXiME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-label text-xs tracking-widest opacity-80">RETREAT</p>
+<h3 class="font-headline text-xl">Wellness Resorts</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Section -->
+<section class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8 order-2 md:order-1">
+<h2 class="font-headline text-5xl">The Festival of Light</h2>
+<p class="text-on-surface-variant text-lg">
+                    Experience the ethereal magic of thousand lanterns rising into the night. We curate private viewing decks and local guides to help you navigate the spiritual heart of the Yi Peng festival.
+                </p>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold">Read the Story</button>
+</div>
+<div class="rounded-xl overflow-hidden editorial-shadow h-[500px] order-1 md:order-2">
+<img alt="Lantern festival" class="w-full h-full object-cover" data-alt="Thousands of glowing paper lanterns floating in the dark night sky above a temple in Thailand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgeci6ppYJYkqtpLmfEokC4rcqtJBk3cEdVy8OXbVFDR3K-01MdKwKuGh54Kylsm-FEszNzt0BntisT-HrVtqM22H7FpAGwtAyeTaRZG0YAbrZv1OJX--ZbQRl4BsQAvEK7sx3E3t8BciLxuF0EPLp2IPH-QzrH5KRPs54Tb2lN-hyZDckCEzF7vMe0-Z0BvLpyz0mk5bO9IPTd5U9VnEfYc4lh11BswhaqgMikU6kWx9XtWW6MitHVvsVInDeTOCBmL6IiT8Iw_dJ"/>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="bg-gradient-to-br from-surface to-primary-container/20 py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-headline text-4xl text-center mb-16">Traveler Stories</h2>
+<div class="flex gap-8 overflow-x-auto pb-12 snap-x hide-scrollbar">
+<div class="flex-shrink-0 w-full md:w-[450px] glass-panel p-10 rounded-lg editorial-shadow snap-center">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-6">format_quote</span>
+<p class="text-on-surface text-xl italic mb-8">"Serene doesn't just book a flight; they orchestrate a symphony of moments. My trip to Japan felt like a lived-in dream rather than a vacation."</p>
+<div class="flex items-center gap-4">
+<img alt="Elena" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a young woman with a thoughtful expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSXFvsCDllIvyHz9XqXbiwX27ejBN2G5lfsx5mckSSSZHzCH6jW2MtFf-Q02wPxohC-FCJ9lVpu60-ZXuNHMuUGwDgXAJ3f2uqIq2IcGVe9DRwGJXZ1QFPS_l7m_DxXW0Ca33AJz8A5U__c6U8S1tEjwqSsuBjkVBVI0onrYtDbMlCauFxUuIG7x8YCg5Ik8uPLWH_6uV4ORCpUXNTvXXQZ3d_v1H3-C19gD2aoSb1SfAsaPj4DTfp564e_2UALqdTsO1UZ8E8pbao"/>
+<div>
+<div class="font-bold">Elena Rodriguez</div>
+<div class="text-sm text-on-surface-variant">Design Lead, Madrid</div>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 w-full md:w-[450px] glass-panel p-10 rounded-lg editorial-shadow snap-center">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-6">format_quote</span>
+<p class="text-on-surface text-xl italic mb-8">"The attention to detail is staggering. Finding a hand-written guide to local bakeries in my room was the kind of magic I never knew I needed."</p>
+<div class="flex items-center gap-4">
+<img alt="Marcus" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a man with a beard smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZmgaQ7VFlJZevPOV7jRCdQAaGdwcF6x6DPIppPeSnRfmCDMZOaeLT_3VRgDc5wEvJ4esR856pQnbGNSfXrwNVFfafBGv4ZBTS5O4MDy_EstcR--fKDoGzK08PnqEc569zqkLFUT8Y1zb3gxaZiJ2aP_jChOcISV5q24PlEBKdfRL2_UhtMUgkr45Wr66FyEfl_vUdCuyimXSseCQka-cpOfe-9IEmIpQV1VA9ntkcZX3MmIPdg97zFncBdmGnMEiYqowlzrwv0mW"/>
+<div>
+<div class="font-bold">Marcus Thorne</div>
+<div class="text-sm text-on-surface-variant">Writer, London</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section (Editorial Style) -->
+<section class="max-w-7xl mx-auto px-6 space-y-12">
+<h2 class="font-headline text-5xl">The Journal</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8 group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-6 h-[450px]">
+<img alt="Sri Lanka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Misty tea plantations in Sri Lanka with rolling green hills and a vintage train in the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmepLYyYKtyUEawbQ4sTSSPzYUDO-nIXPcUIVVZ5WhRKFmwnG26a1NkmanU3i7hE0YtGwOG5fFoDwHyPPIX4_db_al1L58O2tflEPqd7d1TfgmE5BM1SXk7dPZNI7uUmY2_6xku1Cg3T-B_7oQt0xzZLp1HlojrdKlaWzHrcRzDWvVd7XykhQBEXNX2X_TAfHJ7rvAJH4A49IFLzmQjYxRtD0ki9znVJbWrVr8oRjBIk_w415fz2UobIL73jBT7YZl3PEX49P0GtHw"/>
+</div>
+<p class="font-label text-primary tracking-widest text-xs font-bold mb-3">DESTINATION FEATURE</p>
+<h3 class="font-headline text-3xl mb-4">Sri Lanka: The Island of Resilient Beauty</h3>
+<p class="text-on-surface-variant line-clamp-2">Discover why this pearl of the Indian Ocean is reclaiming its spot as the world's most evocative travel destination.</p>
+</div>
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="group cursor-pointer">
+<div class="rounded-lg overflow-hidden h-48 mb-4">
+<img alt="Nordic Cabin" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist wooden cabin in a snowy Scandinavian forest at blue hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuv2Rmcz-UP_e7_FjCWQ-9Ap3UXZHLKy1RnBCELwqIFxX40J5Fec6VcXClm_z2YMDMmk2ADnPtd7a7Xh-G6GO6vZ9xmkhEVXx_eg0L7mPuI7Bh0Su1-pf0KcvubfJcTEOzhh-hcMQuNc2c45n73sNo9PApfPb1IryuVszHIVcwxTjafoLihMNwwsjZDzbAc8JuaF6ePL9V1S9ZM5t3UBObQLp9_JmMAOWDPa1_G95VmC5wHvJ-Ou6CkQJ8cMAGMg6bt6lPlETA0MXa"/>
+</div>
+<h4 class="font-headline text-xl">The Art of Slow Living in Nordic Cabins</h4>
+</div>
+<div class="group cursor-pointer">
+<div class="rounded-lg overflow-hidden h-48 mb-4">
+<img alt="Ocean Photography" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Deep blue ocean waves with white sea foam captured from above" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBhqwwApZMnzG-pXzGmzlzDdaAkhVEm9WTrXWexhyB9tPTOyGyhb62GND2uPy8v97TcVDsHmz3phWK_xY6THERmsKhJ1oNweIgX3xD5lCb4eKEBVuGXk4E62KsDNxsdQZsLuJtT2NL65EIDX9AQ6-3HKN14snUpuHvxpyy4P5lQTsctwHfVFZ-zVqrj1Jiix9n1MTAQsR5hBmZOH3SrwBtzRNWlQksVDngomMKRI_msMc3FSdmupKtbKT2L3F4uwUf9N3ynUazTCgk"/>
+</div>
+<h4 class="font-headline text-xl">A Photographer's Guide to Amalfi Light</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 md:px-12 pb-24">
+<div class="relative rounded-xl overflow-hidden h-[500px] flex flex-col items-center justify-center text-center p-8 group">
+<img alt="Foggy Mountain" class="absolute inset-0 w-full h-full object-cover" data-alt="Dreamy landscape of blue mountains receding into a thick white fog with ethereal morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_0MEcdPqQXxdMHzTbnlirfg7Sdn_SqUKK7XeF_Qlv2cjP9Qh4Ykv4j55cvd2P5HSuhX_9yPVlXYII1hE4I9Cmg59SO7EBgw26Py3yFOP_4zVWInSuORLo03SqcABKp69osUvjYAPA_zTxIV83-Cba0aCqemOfjqbTqwvKH9EumQYdycCFMt8rPtKtJ4aPAzqIWR2g0g9QP7DaJ5XKMU_IjcenzTCgOJP-h1tHpD1lkLiAnr4yDfbYC8JukSOsW3URFl23RnJ8ZeE"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+<div class="relative z-10 space-y-8 max-w-2xl">
+<h2 class="font-headline text-5xl md:text-7xl text-white">Ready to Explore?</h2>
+<p class="text-white/80 text-xl font-light">Join our next curated journey or let us design your bespoke escape from the world.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-shadow">Start Planning</button>
+<button class="border-2 border-white/40 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors">Contact Expert</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full py-16 px-8 mt-20 relative overflow-hidden">
+<!-- Forest Overlay Effect -->
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<img alt="Forest Texture" class="w-full h-full object-cover grayscale" data-alt="Abstract silhouette of tall forest trees against a hazy sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ-tVv4im480QMP6VyGaLqim3zMhG8HSWfJbDSxwDmFdF6l0kji8bKuK6g4btJHuYcLRiGQ6sFu2Q7s9kq7ycSsOnjKnMieouRRUm_aKap_fP5X93OZW5X5_qaxsEbWNOBOb9qODsMQKcQRmCB8QROPinD-wAz5iDifsY3oyIRT5JpritW7PO1ArgIXHOrZNJxHhZG6dTQtXSNhtfiBU3kSzkrOhTHQwV1TK6ZG-Kl7E3KI-dmZ3rd5cQDQfyh0yF7szRqgcciJRUp"/>
+</div>
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
+<div class="space-y-6 md:w-1/3">
+<span class="font-serif text-3xl italic text-slate-800 dark:text-slate-100">Serene</span>
+<p class="font-sans text-sm tracking-wide leading-relaxed text-slate-600 dark:text-slate-300">
+                    Curating high-end travel for the intentional wanderer. We find the silence in the chaos and the beauty in the journey.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-800 shadow-sm" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-800 shadow-sm" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-800 shadow-sm" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 w-full md:w-auto">
+<div class="space-y-4">
+<h5 class="font-bold text-slate-900 dark:text-white uppercase tracking-tighter text-xs">Menu</h5>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Destinations</a></li>
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Experiences</a></li>
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Journal</a></li>
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-slate-900 dark:text-white uppercase tracking-tighter text-xs">Support</h5>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Contact</a></li>
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 underline-offset-4" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans tracking-wide text-slate-500 dark:text-slate-400">
+<p>© 2024 Serene Explorer. Curated for the intentional traveler.</p>
+<div class="flex gap-8">
+<span>Designed with Presence</span>
+<span>Global Offices: Kyoto, London, Zurich</span>
+</div>
+</div>
+</footer>
+</body></html>
