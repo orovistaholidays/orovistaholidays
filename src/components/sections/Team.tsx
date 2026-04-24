@@ -18,7 +18,7 @@ export function Team() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative aspect-[1/1.2] w-full"
             >
-              <img src="/assets/cofounder.png" alt="Jay Britto" className="w-full h-full object-cover object-top mix-blend-multiply grayscale-[0.2]" />
+              <img src="/assets/cofounder.png" alt="Zainab Ali Hussain" className="w-full h-full object-cover object-top mix-blend-multiply grayscale-[0.2]" />
             </motion.div>
           </div>
 
@@ -35,7 +35,7 @@ export function Team() {
                 <span className="text-[18px] font-bold text-black tracking-widest uppercase mb-1">MEET THE</span>
               </div>
               <div className="bg-white w-full rounded-t-[30px] px-12 pb-12 pt-0 text-center shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center relative">
-                <h2 className="text-[64px] font-black leading-[0.8] text-black tracking-tighter uppercase mb-10">PRINCIPALS</h2>
+                <h2 className="text-[64px] font-black leading-[0.8] text-black tracking-tighter uppercase mb-10">FOUNDERS</h2>
                 <div className="flex -space-x-4 mb-10 justify-center">
                   {[1,2,3].map(i => (
                     <div key={i} className="w-30 h-10 rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm flex-shrink-0">
@@ -61,7 +61,7 @@ export function Team() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="relative aspect-[1/1.2] w-full"
             >
-              <img src="/assets/founder.png" alt="David Charette" className="w-full h-full object-cover object-top mix-blend-multiply grayscale-[0.2]" />
+              <img src="/assets/founder.png" alt="Aafaque Shaikh" className="w-full h-full object-cover object-top mix-blend-multiply grayscale-[0.2]" />
             </motion.div>
           </div>
         </div>
@@ -69,12 +69,12 @@ export function Team() {
         {/* --- DESKTOP FOOTER (Hidden on Mobile) --- */}
         <div className="hidden md:flex mt-12 flex-row justify-between items-start gap-8 px-2">
            <div className="flex flex-col items-start text-left">
-             <h4 className="text-[42px] font-black tracking-tighter text-black uppercase leading-[0.9] mb-2">Jay Britto</h4>
-             <p className="text-[11px] font-bold text-black/30 tracking-[0.25em] uppercase">STRATEGIC TRAVEL PARTNER</p>
+             <h4 className="text-[42px] font-black tracking-tighter text-black uppercase leading-[0.9] mb-2">Zainab Ali Hussain</h4>
+             <p className="text-[11px] font-bold text-black/30 tracking-[0.25em] uppercase">CO-FOUNDER</p>
            </div>
            <div className="flex flex-col items-end text-right">
-             <h4 className="text-[42px] font-black tracking-tighter text-black uppercase leading-[0.9] mb-2">David Charette</h4>
-             <p className="text-[11px] font-bold text-black/30 tracking-[0.25em] uppercase">CHIEF TRAVEL CURATOR</p>
+             <h4 className="text-[42px] font-black tracking-tighter text-black uppercase leading-[0.9] mb-2">Aafaque Shaikh</h4>
+             <p className="text-[11px] font-bold text-black/30 tracking-[0.25em] uppercase">CEO AND FOUNDER</p>
            </div>
         </div>
 
@@ -86,28 +86,28 @@ export function Team() {
               <h2 className="text-[42px] font-black text-black leading-none tracking-tighter uppercase">THE TEAM</h2>
            </div>
 
-           {/* Principal 1: Jay Britto */}
+           {/* Principal 1: Zainab Ali Hussain */}
            <div className="group">
               <div className="bg-[#eeeae7] rounded-[35px] overflow-hidden pt-8 px-4 flex flex-col items-center">
                  <div className="text-center mb-6">
-                    <h4 className="text-[34px] font-black text-black tracking-tighter uppercase leading-none">Jay Britto</h4>
-                    <p className="text-[10px] font-bold text-black/40 tracking-[0.15em] uppercase mt-2">Strategic Travel Partner</p>
+                    <h4 className="text-[34px] font-black text-black tracking-tighter uppercase leading-none">Zainab Ali Hussain</h4>
+                    <p className="text-[10px] font-bold text-black/40 tracking-[0.15em] uppercase mt-2">Co-Founder</p>
                  </div>
                  <div className="w-[85%] relative">
-                    <img src="/assets/cofounder.png" alt="Jay Britto" className="w-full h-auto object-cover object-top mix-blend-multiply grayscale-[0.2]" />
+                    <img src="/assets/cofounder.png" alt="Zainab Ali Hussain" className="w-full h-auto object-cover object-top mix-blend-multiply grayscale-[0.2]" />
                  </div>
               </div>
            </div>
 
-           {/* Principal 2: David Charette */}
+           {/* Principal 2: Aafaque Shaikh */}
            <div className="group">
               <div className="bg-[#eeeae7] rounded-[35px] overflow-hidden pt-8 px-4 flex flex-col items-center">
                  <div className="text-center mb-6">
-                    <h4 className="text-[34px] font-black text-black tracking-tighter uppercase leading-none">David Charette</h4>
-                    <p className="text-[10px] font-bold text-black/40 tracking-[0.15em] uppercase mt-2">Chief Travel Curator</p>
+                    <h4 className="text-[34px] font-black text-black tracking-tighter uppercase leading-none">Aafaque Shaikh</h4>
+                    <p className="text-[10px] font-bold text-black/40 tracking-[0.15em] uppercase mt-2">Ceo and founder</p>
                  </div>
                  <div className="w-[85%] relative">
-                    <img src="/assets/founder.png" alt="David Charette" className="w-full h-auto object-cover object-top mix-blend-multiply grayscale-[0.2]" />
+                    <img src="/assets/founder.png" alt="Aafaque Shaikh" className="w-full h-auto object-cover object-top mix-blend-multiply grayscale-[0.2]" />
                  </div>
               </div>
            </div>

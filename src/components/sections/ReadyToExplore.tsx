@@ -70,7 +70,7 @@ export function ReadyToExplore() {
 
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/917045546106?text=Hi%20Orovista!%20I%27d%20like%20to%20plan%20a%20trip."
+                href="https://wa.me/919619099699?text=Hi%20Orovista!%20I%27d%20like%20to%20plan%20a%20trip."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3.5 rounded-full font-bold text-[12px] uppercase tracking-wider hover:bg-[#1ebe5d] transition-all shrink-0 w-full sm:w-auto justify-center"

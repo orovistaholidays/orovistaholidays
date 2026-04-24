@@ -33,7 +33,7 @@ export default function Footer() {
               Seamless travel across 34+ countries with local expertise.
             </p>
             <a
-              href="https://wa.me/917045546106"
+              href="https://wa.me/919619099699"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-primary hover:text-black transition-all mb-5"
@@ -42,11 +42,15 @@ export default function Footer() {
               Plan My Trip
             </a>
             <div className="flex gap-2">
-              {[Instagram, Facebook, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-black/30 hover:text-black hover:border-black/30 transition-all">
-                  <Icon className="w-3.5 h-3.5" />
-                </a>
-              ))}
+              <a href="https://www.instagram.com/orovistaholidays?utm_source=qr&igsh=MTA4d3p5aDlhOGszNQ==" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-black/30 hover:text-black hover:border-black/30 transition-all">
+                <Instagram className="w-3.5 h-3.5" />
+              </a>
+              <a href="https://www.facebook.com/share/18XPXxkZx3/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-black/30 hover:text-black hover:border-black/30 transition-all">
+                <Facebook className="w-3.5 h-3.5" />
+              </a>
+              <a href="#" className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-black/30 hover:text-black hover:border-black/30 transition-all">
+                <Youtube className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
@@ -78,8 +82,11 @@ export default function Footer() {
           <div>
             <h5 className="text-[9px] font-black uppercase tracking-[0.4em] text-black/30 mb-4">Contact</h5>
             <ul className="space-y-2.5">
-              <li><a href="tel:+917045546106" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">+91 70455 46106</a></li>
-              <li><a href="mailto:hello@orovista.com" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">hello@orovista.com</a></li>
+              <li><a href="tel:+919619099699" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">+91 96190 99699</a></li>
+              <li><a href="mailto:Orovistaholidays@gmail.com" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">Orovistaholidays@gmail.com</a></li>
+              <li className="text-[12px] font-semibold text-black/30 uppercase tracking-tight leading-relaxed pt-2">
+                107, First Floor, Crescent Business Park, Off Telephone Exchange Lane, Behind Fairfield Hotel, Saki Naka, Mumbai, Maharashtra 400072
+              </li>
             </ul>
             <div className="mt-6 space-y-2.5">
               {["Privacy Policy", "Terms of Service"].map((s, i) => (

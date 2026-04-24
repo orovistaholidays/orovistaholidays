@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { BLOG_POSTS } from "@/data/mock";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -7,85 +8,103 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function Blog() {
-  const featuredPost = BLOG_POSTS.find(post => post.isFeatured);
-  const otherPosts = BLOG_POSTS.filter(post => !post.isFeatured);
+  const [dbPosts, setDbPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch('/api/blogs');
+        const data = await res.json();
+        if (data.success && data.data.length > 0) {
+          setDbPosts(data.data);
+        }
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+    fetchPosts();
+  }, []);
+
+  const displayPosts = (dbPosts.length > 0 ? dbPosts : BLOG_POSTS).slice(0, 3);
 
   return (
-    <section id="journal" className="py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
-        {/* Header */}
-        <div className="text-center mb-24 space-y-4">
-          <span className="text-[10px] font-bold text-primary tracking-[0.4em] uppercase block">The Journal</span>
-          <h2 className="font-headline text-5xl md:text-7xl font-light text-foreground tracking-tighter">Travel <i className="italic">Diaries</i></h2>
+    <section id="journal" className="w-full bg-white py-16 md:py-24 font-sans overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-3 md:px-3">
+        
+        {/* --- Header Section --- */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end mb-12 md:mb-16">
+          <div className="md:col-span-7">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[36px] md:text-[54px] lg:text-[64px] font-black text-black leading-[0.9] uppercase tracking-tighter"
+            >
+              The Travel <br />
+              <span className="text-black/20 italic">Diaries.</span>
+            </motion.h2>
+          </div>
+          <div className="md:col-span-5 flex flex-col items-start md:items-end md:text-right">
+             <div className="flex items-center gap-2 mb-4">
+                <div className="w-2 h-2 rounded-full bg-black shadow-[0_0_10px_rgba(0,0,0,0.2)]" />
+                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-black italic">The Journal</span>
+             </div>
+             <p className="text-[14px] text-black/50 font-medium leading-relaxed max-w-[320px] mb-8">
+                Immerse yourself in stories of discovery.
+             </p>
+             <Link 
+               href="/journal"
+               className="inline-flex items-center gap-3 text-black font-black uppercase tracking-[0.2em] text-[10px] group border-b border-black/10 pb-2 hover:border-black transition-all"
+             >
+               Explore All Diaries
+               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+             </Link>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-          {/* Featured Post */}
-          {featuredPost && (
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="md:col-span-2 group relative h-[700px] rounded-2xl overflow-hidden shadow-premium cursor-pointer"
-            >
-              <Image 
-                src={featuredPost.image}
-                alt={featuredPost.title}
-                fill
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-12 md:p-20 max-w-3xl space-y-8">
-                <span className="bg-primary/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-[9px] font-bold tracking-[0.2em] uppercase">
-                  {featuredPost.category}
-                </span>
-                <h3 className="text-4xl md:text-6xl font-headline font-light text-white leading-tight">
-                  {featuredPost.title}
-                </h3>
-                <p className="text-white/70 line-clamp-2 text-lg font-light leading-relaxed">
-                  {featuredPost.description}
-                </p>
-                <Link href="#" className="inline-flex items-center gap-4 text-white font-bold uppercase tracking-widest text-[11px] group">
-                  Read Full Story 
-                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                    <ArrowRight className="w-4 h-4" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-5">
+          {displayPosts.map((post, i) => (
+            <Link key={post._id || post.id} href={`/journal/${post._id || post.id}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group cursor-pointer flex flex-col"
+              >
+                {/* Image Block */}
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[24px] md:rounded-[32px] mb-6 shadow-sm group-hover:shadow-xl transition-all duration-700">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2000ms]"
+                  />
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-white/90 backdrop-blur-md text-black px-5 py-2 rounded-full text-[9px] font-black tracking-widest uppercase shadow-sm">
+                      {post.category}
+                    </span>
                   </div>
-                </Link>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Small Posts */}
-          {otherPosts.map((post, i) => (
-            <motion.div 
-              key={post.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group space-y-8 cursor-pointer"
-            >
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-premium group-hover:shadow-premium-lg transition-all duration-700">
-                <Image 
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
-              </div>
-              <div className="space-y-4">
-                <span className="text-[9px] font-bold text-primary tracking-[0.3em] uppercase block">
-                  {post.category}
-                </span>
-                <h4 className="text-3xl font-headline font-light text-foreground leading-tight group-hover:text-primary transition-colors">
-                  {post.title}
-                </h4>
-                <div className="pt-4 flex items-center gap-4 text-foreground/40 font-bold uppercase tracking-widest text-[9px]">
-                  <span>Explore </span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
-              </div>
-            </motion.div>
+
+                {/* Content Block */}
+                <div className="flex flex-col flex-grow">
+                  <h3 className="text-[24px] md:text-[32px] font-black uppercase tracking-tighter text-black leading-tight mb-4 group-hover:text-primary transition-colors duration-500">
+                    {post.title}
+                  </h3>
+                  <p className="text-[14px] text-black/40 font-medium leading-relaxed mb-8 line-clamp-3">
+                    {post.description}
+                  </p>
+                  
+                  <div className="mt-auto flex items-center gap-3 text-black group-hover:gap-5 transition-all duration-500">
+                    <span className="text-[10px] font-black uppercase tracking-widest">Read Article</span>
+                    <div className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
+                        <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

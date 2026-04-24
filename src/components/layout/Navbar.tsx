@@ -5,10 +5,12 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ isSolid = false }: { isSolid?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+
+  const effectiveScrolled = isScrolled || isSolid;
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -38,6 +40,7 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Packages", href: "#packages" },
     { name: "Destinations", href: "#experiences" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Why Us", href: "#advantage" },
     { name: "Journeys", href: "#journeys" },
     { name: "Journal", href: "#journal" },
@@ -57,7 +60,7 @@ export default function Navbar() {
       <div 
         className={cn(
           "mx-auto flex justify-between items-center transition-all duration-700",
-          isScrolled 
+          effectiveScrolled 
             ? "max-w-6.9xl bg-white/90 backdrop-blur-md shadow-premium-lg rounded-full px-8 py-4 border border-border/50" 
             : "max-w-7xl px-4 py-4 bg-transparent"
         )}
@@ -68,12 +71,12 @@ export default function Navbar() {
             alt="Orovista Holidays" 
             className={cn(
               "h-10 md:h-10 w-auto object-contain transition-all duration-500",
-              !isScrolled && "brightness-0 invert"
+              !effectiveScrolled && "brightness-0 invert"
             )}
           />
           <span className={cn(
             "text-[18px] md:text-[22px] font-headline tracking-tighter transition-colors duration-500 leading-none",
-            isScrolled ? "text-foreground" : "text-white"
+            effectiveScrolled ? "text-foreground" : "text-white"
           )}>
             Orovista Holidays
           </span>
@@ -86,18 +89,18 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full",
-                isScrolled ? "text-foreground/70" : "text-white/80"
+                effectiveScrolled ? "text-foreground/70" : "text-white/80"
               )}
             >
               {link.name}
             </Link>
           ))}
         </nav>
-
+ 
         <div className="flex items-center gap-6">
           <a href="#contact" className={cn(
             "hidden md:block px-6 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all duration-300",
-            isScrolled 
+            effectiveScrolled 
               ? "bg-foreground text-white hover:bg-primary hover:text-foreground shadow-md" 
               : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-foreground"
           )}>
@@ -107,7 +110,7 @@ export default function Navbar() {
           <button
             className={cn(
               "md:hidden p-2 transition-colors",
-              isScrolled ? "text-foreground" : "text-white"
+              effectiveScrolled ? "text-foreground" : "text-white"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >

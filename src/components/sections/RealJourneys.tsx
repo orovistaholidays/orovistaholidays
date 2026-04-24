@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 
 const stories = [
@@ -57,9 +57,27 @@ const stories = [
 
 export function RealJourneys() {
    const [index, setIndex] = useState(0);
+   const [dbStories, setDbStories] = useState<any[]>([]);
 
-   const next = () => setIndex((prev) => (prev + 1) % stories.length);
-   const prev = () => setIndex((prev) => (prev - 1 + stories.length) % stories.length);
+   useEffect(() => {
+      const fetchStories = async () => {
+         try {
+            const res = await fetch('/api/stories');
+            const data = await res.json();
+            if (data.success && data.data.length > 0) {
+               setDbStories(data.data);
+            }
+         } catch (error) {
+            console.error('Error fetching stories:', error);
+         }
+      };
+      fetchStories();
+   }, []);
+
+   const displayStories = dbStories.length > 0 ? dbStories : stories;
+
+   const next = () => setIndex((prev) => (prev + 1) % displayStories.length);
+   const prev = () => setIndex((prev) => (prev - 1 + displayStories.length) % displayStories.length);
 
    return (
       <section id="journeys" className="w-full bg-white py-10 md:py-15 flex flex-col justify-center min-h-[90vh] font-sans overflow-hidden">
@@ -81,7 +99,7 @@ export function RealJourneys() {
                         exit={{ opacity: 0, y: -10 }}
                         className="text-[28px] md:text-[42px] lg:text-[54px] font-bold text-black leading-[1.1] tracking-tighter"
                      >
-                        {stories[index].heading}
+                        {displayStories[index].heading}
                      </motion.h2>
                   </AnimatePresence>
                </div>
@@ -127,12 +145,12 @@ export function RealJourneys() {
                            {Array.from({ length: 5 }).map((_, i) => (
                               <Star
                                  key={i}
-                                 className={`w-6 h-6 md:w-8 md:h-8 ${i < stories[index].rating ? 'fill-current' : 'text-white/10'}`}
+                                 className={`w-6 h-6 md:w-8 md:h-8 ${i < displayStories[index].rating ? 'fill-current' : 'text-white/10'}`}
                               />
                            ))}
                         </div>
                         <p className="text-[18px] md:text-[24px] lg:text-[32px] font-medium text-white/90 leading-[1.3] tracking-tight mb-8">
-                           "{stories[index].quote}"
+                           "{displayStories[index].quote}"
                         </p>
                      </motion.div>
                   </AnimatePresence>
@@ -154,7 +172,7 @@ export function RealJourneys() {
                      </div>
 
                      <div className="flex gap-2">
-                        {stories.map((_, i) => (
+                        {displayStories.map((_, i) => (
                            <div
                               key={i}
                               className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${index === i ? 'w-4 bg-primary' : 'bg-white/20'}`}
@@ -177,17 +195,17 @@ export function RealJourneys() {
                      >
                         <div className="relative w-full h-full rounded-[1rem] md:rounded-[1.5rem] overflow-hidden">
                            <img
-                              src={stories[index].image}
+                              src={displayStories[index].image}
                               className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]"
-                              alt={stories[index].name}
+                              alt={displayStories[index].name}
                            />
                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
                            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
                               <h4 className="text-[18px] md:text-[22px] font-bold text-white uppercase tracking-tight leading-none mb-1">
-                                 {stories[index].name}
+                                 {displayStories[index].name}
                               </h4>
-                              <p className="text-white/50 text-[12px] md:text-[13px] font-medium uppercase tracking-widest italic">{stories[index].role}</p>
+                              <p className="text-white/50 text-[12px] md:text-[13px] font-medium uppercase tracking-widest italic">{displayStories[index].role}</p>
                            </div>
                         </div>
                      </motion.div>

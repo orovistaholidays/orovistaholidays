@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const WHATSAPP_NUMBER = "917045546106";
-const PHONE_NUMBER = "+917045546106";
+const WHATSAPP_NUMBER = "919619099699";
+const PHONE_NUMBER = "+919619099699";
 const WHATSAPP_MSG = "Hi Orovista! I'd like to plan a trip.";
 
 export function FloatingCTA() {

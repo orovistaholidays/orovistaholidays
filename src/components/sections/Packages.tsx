@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRef, useState,useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import {
    X,
    MapPin,
@@ -25,7 +25,7 @@ const packages = [
       id: "ladakh",
       title: "Kingdom of Clouds",
       location: "Ladakh, India",
-     
+
       duration: "10 Days Journey",
       price: "₹85,000",
       image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=1200",
@@ -35,7 +35,7 @@ const packages = [
       id: "switzerland",
       title: "Grand Alpine Luxe",
       location: "Switzerland",
-     
+
       duration: "12 Days Luxury",
       price: "₹4,85,000",
       image: "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=1200",
@@ -45,26 +45,44 @@ const packages = [
       id: "bali",
       title: "The Island Spirit",
       location: "Indonesia",
-    
+
       duration: "7 Days Pure Bliss",
       price: "₹1,15,000",
       image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200",
       description: "Lush jungles, emerald rice terraces, and private cliffside villas."
    },
    {
-       id: "philippines",
-       title: "The Azure Archipelago",
-       location: "Philippines",
-       duration: "9 Days Island Hopping",
-       price: "₹1,45,000",
-       image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=1200",
-       description: "Discover private lagoons and crystal-clear secret beaches across 7,000 islands."
-    }
+      id: "philippines",
+      title: "The Azure Archipelago",
+      location: "Philippines",
+      duration: "9 Days Island Hopping",
+      price: "₹1,45,000",
+      image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=1200",
+      description: "Discover private lagoons and crystal-clear secret beaches across 7,000 islands."
+   }
 ];
 
 export function Packages() {
    const [selectedPackage, setSelectedPackage] = useState<any>(null);
+   const [dbPackages, setDbPackages] = useState<any[]>([]);
    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+   useEffect(() => {
+      const fetchPackages = async () => {
+         try {
+            const res = await fetch('/api/packages');
+            const data = await res.json();
+            if (data.success && data.data.length > 0) {
+               setDbPackages(data.data);
+            }
+         } catch (error) {
+            console.error('Error fetching packages:', error);
+         }
+      };
+      fetchPackages();
+   }, []);
+
+   const displayPackages = dbPackages.length > 0 ? dbPackages : packages;
 
    const scroll = (direction: 'left' | 'right') => {
       if (scrollContainerRef.current) {
@@ -139,52 +157,52 @@ export function Packages() {
                className="flex-grow flex flex-col md:flex-row gap-12 md:gap-6 md:overflow-x-auto no-scrollbar snap-y md:snap-x snap-mandatory pb-10"
                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {packages.map((pkg, index) => (
-                   <motion.div
-                      key={pkg.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="w-full md:min-w-full snap-center flex flex-col group cursor-pointer bg-[#f8f6f4] md:bg-transparent p-5 md:p-0 rounded-[40px] md:rounded-0"
-                      onClick={() => setSelectedPackage(pkg)}
-                   >
-                      {/* --- Image Block (Top on Mobile, Bottom on Desktop) --- */}
-                      <div className="order-1 md:order-2 h-[250px] sm:h-[300px] md:h-[300px] lg:h-[380px] w-full overflow-hidden rounded-[28px] md:rounded-[40px] relative shadow-lg mb-6 md:mb-8 md:mt-8">
-                         <img
-                            src={pkg.image}
-                            className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2000ms]"
-                            alt={pkg.title}
-                         />
-                      </div>
+               {displayPackages.map((pkg, index) => (
+                  <motion.div
+                     key={pkg._id || pkg.id}
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ delay: index * 0.1 }}
+                     className="w-full md:min-w-full snap-center flex flex-col group cursor-pointer bg-[#f8f6f4] md:bg-transparent p-5 md:p-0 rounded-[40px] md:rounded-0"
+                     onClick={() => setSelectedPackage(pkg)}
+                  >
+                     {/* --- Image Block (Top on Mobile, Bottom on Desktop) --- */}
+                     <div className="order-1 md:order-2 h-[250px] sm:h-[300px] md:h-[300px] lg:h-[380px] w-full overflow-hidden rounded-[28px] md:rounded-[40px] relative shadow-lg mb-6 md:mb-8 md:mt-8">
+                        <img
+                           src={pkg.image}
+                           className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2000ms]"
+                           alt={pkg.title}
+                        />
+                     </div>
 
-                      {/* --- Information Block --- */}
-                      <div className="order-2 md:order-1 flex flex-col">
-                         <div className="flex justify-between items-center mb-4 border-b border-black/5 pb-4">
-                            <div className="flex items-center gap-3">
-                               <MapPin className="w-4 h-4 text-primary" />
-                               <span className="text-[11px] font-black uppercase tracking-widest text-black/40">{pkg.location}</span>
-                            </div>
+                     {/* --- Information Block --- */}
+                     <div className="order-2 md:order-1 flex flex-col">
+                        <div className="flex justify-between items-center mb-4 border-b border-black/5 pb-4">
+                           <div className="flex items-center gap-3">
+                              <MapPin className="w-4 h-4 text-primary" />
+                              <span className="text-[11px] font-black uppercase tracking-widest text-black/40">{pkg.location}</span>
+                           </div>
 
-                            <span className="text-[11px] font-black uppercase tracking-widest text-black/40">{pkg.duration}</span>
-                         </div>
+                           <span className="text-[11px] font-black uppercase tracking-widest text-black/40">{pkg.duration}</span>
+                        </div>
 
-                         <h3 className="text-[26px] md:text-[42px] lg:text-[54px] font-black uppercase tracking-tighter text-black leading-tight mb-4 md:mb-6 group-hover:text-primary transition-colors">
-                            {pkg.title.includes(':') ? pkg.title.split(':')[1].trim() : pkg.title}
-                         </h3>
+                        <h3 className="text-[26px] md:text-[42px] lg:text-[54px] font-black uppercase tracking-tighter text-black leading-tight mb-4 md:mb-6 group-hover:text-primary transition-colors">
+                           {pkg.title.includes(':') ? pkg.title.split(':')[1].trim() : pkg.title}
+                        </h3>
 
-                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-0">
-                            <div className="flex flex-col">
-                               <span className="text-[10px] font-bold text-black/20 uppercase tracking-widest leading-none mb-1">Total Expedition</span>
-                               <span className="text-[24px] md:text-[32px] lg:text-[38px] font-black text-black leading-none">{pkg.price}</span>
-                            </div>
-                            <button className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-black text-white rounded-full font-black uppercase text-[10px] lg:text-[11px] tracking-widest flex items-center justify-center gap-3 hover:bg-primary hover:text-black transition-all shadow-xl">
-                               EXPLORE JOURNEY <ArrowUpRight className="w-4 h-4" />
-                            </button>
-                         </div>
-                      </div>
-                   </motion.div>
-                ))}
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-0">
+                           <div className="flex flex-col">
+                              <span className="text-[10px] font-bold text-black/20 uppercase tracking-widest leading-none mb-1">Total Expedition</span>
+                              <span className="text-[24px] md:text-[32px] lg:text-[38px] font-black text-black leading-none">{pkg.price}</span>
+                           </div>
+                           <button className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-black text-white rounded-full font-black uppercase text-[10px] lg:text-[11px] tracking-widest flex items-center justify-center gap-3 hover:bg-primary hover:text-black transition-all shadow-xl">
+                              EXPLORE JOURNEY <ArrowUpRight className="w-4 h-4" />
+                           </button>
+                        </div>
+                     </div>
+                  </motion.div>
+               ))}
 
                {/* Spacer at the end for scroll padding */}
                <div className="hidden md:block min-w-[10vw]" />

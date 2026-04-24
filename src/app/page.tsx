@@ -12,6 +12,7 @@ import { ReadyToExplore } from "@/components/sections/ReadyToExplore";
 import { Team } from "@/components/sections/Team";
 import { ServiceCategories } from "@/components/sections/ServiceCategories";
 import { Packages } from "@/components/sections/Packages";
+import { Gallery } from "@/components/sections/Gallery";
 import { GlobalPresence } from "@/components/sections/GlobalPresence";
 import { OrovistaAdvantage } from "@/components/sections/OrovistaAdvantage";
 import { RealJourneys } from "@/components/sections/RealJourneys";
@@ -30,11 +31,12 @@ export default function Home() {
         <ServiceCategories />
         
         <Packages />
+        <Gallery />
         <OrovistaAdvantage />
         <GlobalPresence />
       <TrustBadges />
         <RealJourneys />
-      
+        <Blog />
         <FAQ />
         <ReadyToExplore />
         <FloatingCTA />
