@@ -1,5 +1,15 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Orovista Holidays",
+  description: "Review the Terms of Service for booking and traveling with Orovista Holidays.",
+  robots: {
+    index: true,
+    follow: true,
+  }
+};
 
 export default function TermsOfService() {
   return (

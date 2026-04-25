@@ -1,11 +1,13 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tour Gallery",
-  description: "Explore the breathtaking destinations and extraordinary experiences curated by Orovista Holidays. A visual narrative of luxury travel across the globe.",
+  title: "Global Travel Gallery | Orovista Holidays",
+  description: "Explore our visual narrative of luxury travel across the globe. Witness breathtaking landscapes, exotic resorts, and exclusive experiences curated by Orovista Holidays.",
   openGraph: {
-    title: "Tour Gallery | Orovista Holidays",
-    description: "Explore our visual narrative of luxury travel experiences.",
+    title: "Global Travel Gallery | Orovista Holidays",
+    description: "Explore our visual narrative of luxury travel across the globe. Witness breathtaking landscapes, exotic resorts, and exclusive experiences.",
+    url: "https://www.orovistaholidays.com/gallery",
+    type: "website",
   },
 };
 
@@ -14,5 +16,21 @@ export default function GalleryLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            "name": "Orovista Holidays Global Travel Gallery",
+            "description": "A curated collection of luxury travel destinations, exotic resorts, and exclusive global experiences.",
+            "url": "https://www.orovistaholidays.com/gallery",
+          }),
+        }}
+      />
+      {children}
+    </>
+  );
 }

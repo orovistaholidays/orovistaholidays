@@ -13,6 +13,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.orovistaholidays.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Orovista Holidays | Premium Global Tour Packages & Luxury Travel",
     template: "%s | Orovista Holidays"

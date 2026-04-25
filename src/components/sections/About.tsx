@@ -40,13 +40,13 @@ export function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="space-y-12 max-w-[280px]"
+              className="space-y-4 max-w-[280px]"
             >
               <p className="text-[11px] md:text-[13px] font-bold text-black uppercase tracking-[0.05em]">
-                Luxurious Travel and <br /> Bespoke Journeys
+                Premium Global Travel & <br /> Luxury Tour Packages
               </p>
               <p className="text-[14px] md:text-[16px] text-black/60 font-medium leading-relaxed">
-                Modern Luxury: Curations featuring clean lines, neutral palettes, and high-quality experiences. Each journey is a bespoke masterpiece designed for those who seek the extraordinary.
+                Orovista Holidays specializes in curating bespoke international journeys and premium tour packages. As an elite travel agency, we design extraordinary, high-end vacation experiences tailored to your unique travel lifestyle.
               </p>
             </motion.div>
           </div>
@@ -80,7 +80,7 @@ export function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="flex flex-col gap-10"
+              className="flex flex-col gap-5"
             >
               <div className="relative aspect-[16/10] w-full rounded-[32px] md:rounded-[40px] overflow-hidden shadow-xl shadow-black/5 group">
                 <img 
@@ -95,12 +95,12 @@ export function About() {
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="text-[24px] md:text-[28px] lg:text-[34px] font-extrabold tracking-tight text-black leading-none">
-                  Our Philosophy
+              <div className="space-y-2">
+                <h3 className="text-[20px] md:text-[10px] lg:text-[20px] font-extrabold tracking-tight text-black leading-none">
+                  Our Travel Philosophy
                 </h3>
                 <p className="text-[14px] md:text-[15px] text-black/60 font-medium leading-relaxed">
-                  At Orovista Holidays, we believe in creating luxurious, personalized environments that reflect our clients' unique tastes and travel lifestyles.
+                  At Orovista Holidays, our mission is to deliver unparalleled luxury and highly personalized itineraries. From exclusive global resorts to immersive cultural tours, we ensure every detail of your luxury holiday is meticulously planned.
                 </p>
               </div>
             </motion.div>

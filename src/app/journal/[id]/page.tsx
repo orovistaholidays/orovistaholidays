@@ -44,8 +44,38 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ id:
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "description": blog.description,
+    "image": blog.image,
+    "author": {
+      "@type": "Organization",
+      "name": "Orovista Specialist"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Orovista Holidays",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.orovistaholidays.com/assets/orovistaholidayslogo.png"
+      }
+    },
+    "datePublished": blog.createdAt,
+    "dateModified": blog.updatedAt || blog.createdAt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.orovistaholidays.com/journal/${id}`
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar isSolid={true} />
       
       <main className="flex-grow pt-24 md:pt-32 pb-24">

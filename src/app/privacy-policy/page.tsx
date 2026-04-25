@@ -1,5 +1,15 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Orovista Holidays",
+  description: "Read the Privacy Policy of Orovista Holidays to understand how we protect your personal data and respect your privacy.",
+  robots: {
+    index: true,
+    follow: true,
+  }
+};
 
 export default function PrivacyPolicy() {
   return (

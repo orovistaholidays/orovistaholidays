@@ -1,6 +1,28 @@
 import { MetadataRoute } from 'next';
+import dbConnect from "@/lib/mongodb";
+import Blog from "@/models/Blog";
+import Package from "@/models/Package";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  await dbConnect();
+  
+  const blogs = await Blog.find({}).sort({ createdAt: -1 });
+  const packages = await Package.find({}).sort({ createdAt: -1 });
+
+  const blogUrls = blogs.map((blog) => ({
+    url: `https://www.orovistaholidays.com/journal/${blog._id}`,
+    lastModified: blog.updatedAt || blog.createdAt || new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  const packageUrls = packages.map((pkg) => ({
+    url: `https://www.orovistaholidays.com/packages/${pkg._id}`,
+    lastModified: pkg.updatedAt || pkg.createdAt || new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: 'https://www.orovistaholidays.com',
@@ -20,5 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...packageUrls,
+    ...blogUrls,
   ];
 }
