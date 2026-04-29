@@ -39,10 +39,10 @@ export function GlobalPresence() {
 
                      <div className="flex flex-col items-start">
                         
-                        <h2 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[52px] font-black text-black leading-[0.95] tracking-tight uppercase">
-                           Europe <br />
-                           & Baku Hub.
-                        </h2>
+                        <h3 className="text-[28px] sm:text-[34px] md:text-[42px] lg:text-[52px] font-black text-black leading-[0.95] tracking-tight uppercase">
+                          EUROPE & <br />
+                          <span className="text-black/20 italic">BAKU HUB.</span>
+                        </h3>
                         <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
                            {["Baku Hub", "France", "Switzerland", "Azerbaijan"].map((loc, i) => (
                               <span

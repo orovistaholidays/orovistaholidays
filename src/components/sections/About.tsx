@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export function About() {
   return (
@@ -60,10 +61,11 @@ export function About() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="relative aspect-[16/10] w-full rounded-[40px] md:rounded-[50px] overflow-hidden shadow-2xl shadow-black/5 group"
             >
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200" 
-                alt="Soneva Jani, Maldives" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="Soneva Jani, Maldives - Luxury Resort Experience by Orovista Holidays" 
+                fill
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-6 left-8 md:bottom-10 md:left-12">
@@ -83,10 +85,11 @@ export function About() {
               className="flex flex-col gap-5"
             >
               <div className="relative aspect-[16/10] w-full rounded-[32px] md:rounded-[40px] overflow-hidden shadow-xl shadow-black/5 group">
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800" 
-                  alt="Grace Hotel, Santorini" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Grace Hotel, Santorini - Boutique Luxury Stay via Orovista Holidays" 
+                  fill
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-5 left-6">

@@ -46,10 +46,10 @@ export function TrustBadges() {
               </div>
               <span className="text-[11px] font-black uppercase tracking-[0.4em] text-black/40 italic">Verified Assurance</span>
             </div>
-            <h2 className="text-[34px] md:text-[52px] lg:text-[64px] font-light text-black leading-[1.1] tracking-tighter">
+            <h3 className="text-[34px] md:text-[52px] lg:text-[64px] font-light text-black leading-[1.1] tracking-tighter">
               Trust & <br />
               <span className="text-black/20 italic">Excellence.</span>
-            </h2>
+            </h3>
           </motion.div>
           <motion.p 
             initial={{ opacity: 0, x: 20 }}

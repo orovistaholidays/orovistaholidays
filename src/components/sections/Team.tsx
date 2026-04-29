@@ -40,7 +40,7 @@ export function Team() {
                 <span className="text-[18px] font-bold text-black tracking-widest uppercase mb-1">MEET THE</span>
               </div>
               <div className="bg-white w-full rounded-t-[30px] px-12 pb-12 pt-0 text-center shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center relative">
-                <h2 className="text-[64px] font-black leading-[0.8] text-black tracking-tighter uppercase mb-10">FOUNDERS</h2>
+                <h3 className="text-[64px] font-black leading-[0.8] text-black tracking-tighter uppercase mb-10">FOUNDERS</h3>
                 <div className="flex -space-x-4 mb-10 justify-center">
                   {[1,2,3].map(i => (
                     <div key={i} className="w-30 h-10 rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm flex-shrink-0">
@@ -88,7 +88,7 @@ export function Team() {
            {/* Mobile Header */}
            <div className="flex flex-col mb-4">
               <span className="text-[10px] font-black text-black/30 tracking-[0.4em] uppercase mb-1">Expert Curators</span>
-              <h2 className="text-[42px] font-black text-black leading-none tracking-tighter uppercase">THE TEAM</h2>
+              <h3 className="text-[42px] font-black text-black leading-none tracking-tighter uppercase">THE TEAM</h3>
            </div>
 
            {/* Principal 1: Zainab Ali Hussain */}

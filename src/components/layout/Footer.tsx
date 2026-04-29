@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle, Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Footer() {
@@ -23,10 +24,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <img
+              <Image
                 src="/assets/orovistaholidayslogo.png"
-                alt="Orovista Holidays"
-                className="h-12 md:h-14 w-auto object-contain"
+                alt="Orovista Holidays - Elite Travel Agency Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto mb-8 brightness-0 invert grayscale"
               />
             </Link>
             <p className="text-[12px] text-black/40 font-semibold uppercase tracking-tight leading-relaxed mb-5 max-w-[220px]">
@@ -96,7 +99,7 @@ export default function Footer() {
             <h5 className="text-[9px] font-black uppercase tracking-[0.4em] text-black/30 mb-4">Contact</h5>
             <ul className="space-y-2.5">
               <li><a href="tel:+919619099699" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">+91 96190 99699</a></li>
-              <li><a href="mailto:Orovistaholidays@gmail.com" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">Orovistaholidays@gmail.com</a></li>
+              <li><a href="mailto:Orovistaholidays@gmail.com" className="text-[12px] font-semibold text-black/40 hover:text-black uppercase tracking-tight transition-colors">Orovistaholidays&#64;gmail.com</a></li>
               <li className="text-[12px] font-semibold text-black/30 uppercase tracking-tight leading-relaxed pt-2">
                 107, First Floor, Crescent Business Park, Off Telephone Exchange Lane, Behind Fairfield Hotel, Saki Naka, Mumbai, Maharashtra 400072
               </li>

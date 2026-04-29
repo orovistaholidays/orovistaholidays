@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -66,9 +67,11 @@ export default function Navbar({ isSolid = false }: { isSolid?: boolean }) {
         )}
       >
         <Link href="/" className="transition-all duration-500 flex items-center">
-          <img 
+          <Image 
             src="/assets/orovistaholidayslogo.png" 
-            alt="Orovista Holidays" 
+            alt="Orovista Holidays - Elite Travel Agency Logo" 
+            width={150}
+            height={40}
             className={cn(
               "h-10 md:h-10 w-auto object-contain transition-all duration-500",
               !effectiveScrolled && "brightness-0 invert"

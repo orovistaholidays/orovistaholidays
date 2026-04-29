@@ -56,9 +56,9 @@ export function ReadyToExplore() {
 
           {/* Content */}
           <div className="relative z-10 px-6 md:px-12 max-w-2xl w-full">
-            <h2 className="text-[36px] md:text-[52px] lg:text-[64px] font-bold text-white leading-tight tracking-tight mb-4">
+            <h3 className="text-[36px] md:text-[52px] lg:text-[64px] font-bold text-white leading-tight tracking-tight mb-4">
               Your Story Begins <br /> at Orovista.
-            </h2>
+            </h3>
             <p className="text-[14px] md:text-[16px] text-white/70 font-medium leading-relaxed mb-10 max-w-md mx-auto">
               Join our exclusive network for priority access to curated travel packages and member-only pricing.
             </p>

@@ -301,9 +301,9 @@ export function ServiceCategories() {
                     </div>
                     <div className="lg:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-[#f8f6f4]">
                       <span className="text-amber-600 text-[12px] font-bold uppercase tracking-[0.3em] mb-4">Our Approach</span>
-                      <h2 className="text-[32px] md:text-[48px] font-black text-black leading-tight uppercase mb-6">
+                      <h3 className="text-[32px] md:text-[48px] font-black text-black leading-tight uppercase mb-6">
                         {selectedService.details.headline}
-                      </h2>
+                      </h3>
                       <p className="text-[16px] md:text-[18px] text-black/60 font-medium leading-relaxed max-w-xl">
                         {selectedService.details.philosophy}
                       </p>

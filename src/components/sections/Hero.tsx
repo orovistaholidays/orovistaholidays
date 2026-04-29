@@ -8,18 +8,21 @@ const DESTINATIONS = [
   {
     id: 1,
     src: "/192129-891702216.mp4",
+    poster: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200",
     label: "The Swiss Alps",
     coordinates: "46° 33' N | 8° 33' E",
   },
   {
     id: 2,
     src: "/85521-589994823.mp4",
+    poster: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1200",
     label: "Maldivian Shores",
     coordinates: "3° 12' N | 73° 13' E",
   },
   {
     id: 3,
     src: "/45569-443244046_medium.mp4",
+    poster: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200",
     label: "Kyoto Sanctuaries",
     coordinates: "35° 00' N | 135° 46' E",
   },
@@ -49,10 +52,12 @@ export default function Hero() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             src={currentDest.src}
+            poster={currentDest.poster}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover scale-105 origin-center"
           />
         </AnimatePresence>

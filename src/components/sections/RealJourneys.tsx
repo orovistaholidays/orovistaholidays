@@ -92,7 +92,7 @@ export function RealJourneys() {
                      <span className="text-[11px] font-black uppercase tracking-[0.3em] text-black italic">Real Stories</span>
                   </div>
                   <AnimatePresence mode="wait">
-                     <motion.h2
+                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export function RealJourneys() {
                         className="text-[28px] md:text-[42px] lg:text-[54px] font-bold text-black leading-[1.1] tracking-tighter"
                      >
                         {displayStories[index].heading}
-                     </motion.h2>
+                     </motion.div>
                   </AnimatePresence>
                </div>
 
