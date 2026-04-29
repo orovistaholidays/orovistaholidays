@@ -48,7 +48,7 @@ export function ReadyToExplore() {
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
             className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-[4000ms]"
-            alt="Adventure"
+            alt="Start your journey with Orovista Holidays - Exclusive travel network"
           />
 
           {/* Overlay */}

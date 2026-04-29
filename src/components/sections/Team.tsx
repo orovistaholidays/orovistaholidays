@@ -44,7 +44,7 @@ export function Team() {
                 <div className="flex -space-x-4 mb-10 justify-center">
                   {[1,2,3].map(i => (
                     <div key={i} className="w-30 h-10 rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm flex-shrink-0">
-                      <img src={`https://images.unsplash.com/photo-${i === 1 ? '1560250097-0b93528c311a' : i === 2 ? '1472099645785-5658abf4ff4e' : '1519085360753-af0119f7cbe7'}?q=80&w=400`} className="w-full h-full object-cover" alt="" />
+                      <img src={`https://images.unsplash.com/photo-${i === 1 ? '1560250097-0b93528c311a' : i === 2 ? '1472099645785-5658abf4ff4e' : '1519085360753-af0119f7cbe7'}?q=80&w=400`} className="w-full h-full object-cover" alt={`Team Member ${i}`} />
                     </div>
                   ))}
                 </div>

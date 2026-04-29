@@ -136,27 +136,11 @@ export function ServiceCategories() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-[40px] md:text-[54px] lg:text-[72px] font-bold leading-[0.8] text-black tracking-tighter uppercase"
+                  className="text-[40px] md:text-[54px] lg:text-[72px] font-bold leading-[0.8] text-black tracking-tighter uppercase flex flex-col"
                 >
-                  Mastering
-                </motion.h2>
-                <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-[60px] md:text-[80px] lg:text-[110px] font-black leading-[0.8] text-black tracking-tighter uppercase md:ml-12 lg:ml-20"
-                >
-                  THE ART OF
-                </motion.h2>
-                <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="text-[40px] md:text-[54px] lg:text-[72px] font-bold leading-[0.8] text-black tracking-tighter uppercase self-end md:self-start md:ml-40 lg:ml-60"
-                >
-                  TRAVEL.
+                  <span>Mastering</span>
+                  <span className="text-[60px] md:text-[80px] lg:text-[110px] font-black leading-[0.8] text-black tracking-tighter uppercase md:ml-12 lg:ml-20 mt-4">THE ART OF</span>
+                  <span className="text-[40px] md:text-[54px] lg:text-[72px] font-bold leading-[0.8] text-black tracking-tighter uppercase self-end md:self-start md:ml-40 lg:ml-60 mt-4">TRAVEL.</span>
                 </motion.h2>
               </div>
             </div>
@@ -200,7 +184,7 @@ export function ServiceCategories() {
             </div>
             <div className="md:w-1/2 relative overflow-hidden p-3">
               <div className="w-full h-full overflow-hidden rounded-[30px]">
-                <img src={categories[0].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="" />
+                <img src={categories[0].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="Group Tours - Social luxury travel experience" />
               </div>
             </div>
           </motion.div>
@@ -223,7 +207,7 @@ export function ServiceCategories() {
               <h3 className="text-[28px] md:text-[32px] font-black tracking-tighter text-black uppercase leading-none mb-4">Private <br /> Luxe</h3>
             </div>
             <div className="mt-auto relative h-[250px] overflow-hidden rounded-t-[30px]">
-              <img src={categories[1].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="" />
+              <img src={categories[1].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="Private Luxe - Personalized premium travel" />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent flex items-end p-10">
                 <p className="text-[13px] text-black/60 font-bold leading-tight uppercase tracking-tight">{categories[1].description}</p>
               </div>
@@ -248,7 +232,7 @@ export function ServiceCategories() {
               <h3 className="text-[28px] md:text-[32px] font-black tracking-tighter text-black uppercase leading-none mb-4">Corporate <br /> Events</h3>
             </div>
             <div className="mt-auto relative h-[250px] overflow-hidden rounded-t-[40px]">
-              <img src={categories[2].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="" />
+              <img src={categories[2].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="Corporate Events - B2B travel excellence" />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent flex items-end p-10">
                 <p className="text-[13px] text-black/60 font-bold leading-tight uppercase tracking-tight">{categories[2].description}</p>
               </div>
@@ -278,7 +262,7 @@ export function ServiceCategories() {
             </div>
             <div className="md:w-1/2 relative overflow-hidden p-3">
               <div className="w-full h-full overflow-hidden rounded-[30px]">
-                <img src={categories[3].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="" />
+                <img src={categories[3].image} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" alt="School IV Tours - Safe and educational student travel" />
               </div>
             </div>
           </motion.div>
@@ -313,7 +297,7 @@ export function ServiceCategories() {
                   {/* Hero & Philosophy Split */}
                   <div className="flex flex-col lg:flex-row min-h-[60vh] border-b border-black/5">
                     <div className="lg:w-1/2 h-[40vh] lg:h-auto overflow-hidden">
-                      <img src={selectedService.image} className="w-full h-full object-cover" alt="" />
+                      <img src={selectedService.image} className="w-full h-full object-cover" alt={`${selectedService.title} Detail View`} />
                     </div>
                     <div className="lg:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-[#f8f6f4]">
                       <span className="text-amber-600 text-[12px] font-bold uppercase tracking-[0.3em] mb-4">Our Approach</span>

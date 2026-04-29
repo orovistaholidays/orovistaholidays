@@ -228,7 +228,7 @@ export function Packages() {
                   <div className="flex-grow overflow-y-auto">
                      <div className="max-w-[1400px] mx-auto py-12 md:py-24 px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                         <div className="rounded-[24px] md:rounded-[48px] overflow-hidden shadow-2xl h-[300px] sm:h-[450px] lg:h-auto">
-                           <img src={selectedPackage.image} className="w-full h-full object-cover" alt="" />
+                           <img src={selectedPackage.image} className="w-full h-full object-cover" alt={`${selectedPackage.title} Detail View`} />
                         </div>
                         <div className="flex flex-col justify-center">
                            <h2 className="text-[32px] md:text-[54px] lg:text-[72px] font-black text-black uppercase leading-[0.85] tracking-tighter mb-8">{selectedPackage.title}</h2>

@@ -64,7 +64,7 @@ export function Blog() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-5">
           {displayPosts.map((post, i) => (
-            <Link key={post._id || post.id} href={`/journal/${post._id || post.id}`}>
+            <Link key={post._id || post.id} href={`/journal/${post.slug || post._id || post.id}`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

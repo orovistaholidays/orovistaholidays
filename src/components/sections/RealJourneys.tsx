@@ -115,7 +115,7 @@ export function RealJourneys() {
                         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100"
                      ].map((url, i) => (
                         <div key={i} className="w-9 h-9 rounded-full border-2 border-white bg-neutral-200 overflow-hidden shadow-sm">
-                           <img src={url} alt="" className="w-full h-full object-cover" />
+                           <img src={url} alt={`Traveler feedback avatar ${i + 1}`} className="w-full h-full object-cover" />
                         </div>
                      ))}
                   </div>

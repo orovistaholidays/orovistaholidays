@@ -3,6 +3,7 @@ import mongoose, { Schema, model, models } from 'mongoose';
 export interface IBlog {
   _id?: string;
   title: string;
+  slug: string;
   category: string;
   description: string;
   content: string;
@@ -17,6 +18,14 @@ const BlogSchema = new Schema<IBlog>(
     title: {
       type: String,
       required: [true, 'Please provide a title.'],
+    },
+    slug: {
+      type: String,
+      required: [true, 'Please provide a slug.'],
+      unique: true,
+      sparse: true,
+      lowercase: true,
+      trim: true,
     },
     category: {
       type: String,

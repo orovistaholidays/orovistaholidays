@@ -83,14 +83,16 @@ export default function Hero() {
         {/* Typography */}
         <div className="mb-20">
 
-          <motion.h1
+          <h1 className="sr-only">Orovista Holidays | Luxury Travel & Tour Packages</h1>
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-headline text-7xl md:text-[100px] xl:text-[140px] font-light text-white tracking-tighter leading-none"
           >
             Explore
-          </motion.h1>
+          </motion.div>
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -105,14 +107,14 @@ export default function Hero() {
             </motion.div>
           </AnimatePresence>
 
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="font-headline text-7xl md:text-[100px] xl:text-[140px] font-light text-white tracking-tighter leading-none"
           >
             <span className="italic pr-4 text-white/90">The World.</span>
-          </motion.h1>
+          </motion.div>
 
         </div>
 

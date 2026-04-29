@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Orovista Holidays | Premium Global Tour Packages & Luxury Travel",
+    default: "Orovista Holidays | Luxury Travel & Tour Packages",
     template: "%s | Orovista Holidays"
   },
-  description: "Experience the world with Orovista Holidays. Curated luxury tour packages to 34+ countries, including Europe, Baku, Vietnam, Dubai, and more. Your elite travel partner.",
+  description: "Experience the world with Orovista Holidays. Curated luxury tour packages to Europe, Baku, Vietnam, Dubai, and more. Your elite travel partner.",
   keywords: ["luxury travel", "tour packages", "international tours", "Europe tour packages", "Baku tours", "Vietnam travel", "Orovista Holidays", "bespoke travel"],
   authors: [{ name: "Orovista Holidays" }],
   openGraph: {

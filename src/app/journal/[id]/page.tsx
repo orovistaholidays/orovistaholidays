@@ -16,7 +16,12 @@ import { Metadata } from "next";
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   await dbConnect();
-  const blog = await Blog.findById(id);
+  
+  // Try finding by slug first, then by _id
+  let blog = await Blog.findOne({ slug: id });
+  if (!blog && id.match(/^[0-9a-fA-F]{24}$/)) {
+    blog = await Blog.findById(id);
+  }
   
   if (!blog) return { title: "Post Not Found" };
 
@@ -38,7 +43,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ id:
   const isAdmin = (session?.user as any)?.role === 'admin';
   
   await dbConnect();
-  const blog = await Blog.findById(id);
+  
+  // Try finding by slug first, then by _id
+  let blog = await Blog.findOne({ slug: id });
+  if (!blog && id.match(/^[0-9a-fA-F]{24}$/)) {
+    blog = await Blog.findById(id);
+  }
 
   if (!blog) {
     notFound();

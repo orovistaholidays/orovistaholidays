@@ -111,9 +111,9 @@ export function TrustBadges() {
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 opacity-30 grayscale transition-all hover:opacity-100">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/IATA_logo.svg/1200px-IATA_logo.svg.png" className="h-5 md:h-8 lg:h-10 w-auto" alt="IATA" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Incredible_India_Logo.svg" className="h-5 md:h-8 lg:h-10 w-auto" alt="India" />
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/PATA_logo.svg/1200px-PATA_logo.svg.png" className="h-5 md:h-8 lg:h-10 w-auto" alt="PATA" />
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/IATA_logo.svg/1200px-IATA_logo.svg.png" className="h-5 md:h-8 lg:h-10 w-auto" alt="IATA - International Air Transport Association Member" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Incredible_India_Logo.svg" className="h-5 md:h-8 lg:h-10 w-auto" alt="Incredible India - Ministry of Tourism Approved" />
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/PATA_logo.svg/1200px-PATA_logo.svg.png" className="h-5 md:h-8 lg:h-10 w-auto" alt="PATA - Pacific Asia Travel Association Member" />
           </div>
         </motion.div>
 

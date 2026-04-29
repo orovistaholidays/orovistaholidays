@@ -9,9 +9,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   await dbConnect();
   
-  // if id is not a valid ObjectId, mongoose might throw, but let's assume it handles or we check
   try {
-    const pkg = await Package.findById(id);
+    // Try finding by slug first, then by _id
+    let pkg = await Package.findOne({ slug: id });
+    if (!pkg && id.match(/^[0-9a-fA-F]{24}$/)) {
+      pkg = await Package.findById(id);
+    }
+
     if (!pkg) return { title: "Package Not Found" };
 
     return {
@@ -35,7 +39,11 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
   
   let pkg = null;
   try {
-    pkg = await Package.findById(id);
+    // Try finding by slug first, then by _id
+    pkg = await Package.findOne({ slug: id });
+    if (!pkg && id.match(/^[0-9a-fA-F]{24}$/)) {
+      pkg = await Package.findById(id);
+    }
   } catch(e) {
     // invalid id
   }

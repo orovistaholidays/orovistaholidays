@@ -3,6 +3,7 @@ import mongoose, { Schema, model, models } from 'mongoose';
 export interface IPackage {
   _id?: string;
   title: string;
+  slug: string;
   location: string;
   duration: string;
   price: string;
@@ -18,6 +19,14 @@ const PackageSchema = new Schema<IPackage>(
       type: String,
       required: [true, 'Please provide a title for this package.'],
       maxlength: [100, 'Title cannot be more than 100 characters'],
+    },
+    slug: {
+      type: String,
+      required: [true, 'Please provide a slug.'],
+      unique: true,
+      sparse: true,
+      lowercase: true,
+      trim: true,
     },
     location: {
       type: String,

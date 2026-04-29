@@ -27,10 +27,10 @@ export function Stats() {
             <div className="relative z-10 flex justify-end w-full">
               <div className="flex -space-x-3 mt-1">
                 <div className="w-10 h-10 rounded-full border-2 border-white/20 z-10 shadow-sm overflow-hidden">
-                   <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100" className="w-full h-full object-cover" alt="" />
+                   <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100" className="w-full h-full object-cover" alt="Happy traveler thumbnail 1" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white/20 z-20 shadow-sm overflow-hidden">
-                   <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100" className="w-full h-full object-cover" alt="" />
+                   <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100" className="w-full h-full object-cover" alt="Happy traveler thumbnail 2" />
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border-2 border-white/20 z-30 shadow-sm">
                   <span className="text-white text-xs font-bold leading-none">+</span>
@@ -82,10 +82,10 @@ export function Stats() {
             <div className="relative z-10 flex justify-end w-full">
               <div className="flex -space-x-3 mt-1">
                 <div className="w-10 h-10 rounded-full border-2 border-white/20 z-10 shadow-sm overflow-hidden">
-                   <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100" className="w-full h-full object-cover" alt="" />
+                   <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100" className="w-full h-full object-cover" alt="Team member experience 1" />
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white/20 z-20 shadow-sm overflow-hidden">
-                   <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100" className="w-full h-full object-cover" alt="" />
+                   <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100" className="w-full h-full object-cover" alt="Team member experience 2" />
                 </div>
               </div>
             </div>

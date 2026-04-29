@@ -92,7 +92,7 @@ export function GlobalPresence() {
                      <img
                         src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1200"
                         className="absolute inset-0 w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-[2000ms]"
-                        alt="Domestic"
+                        alt="Orovista Holidays - Indian Subcontinent luxury travel"
                      />
                      <div className="absolute inset-0 bg-black/40" />
 

@@ -64,7 +64,7 @@ export function OrovistaAdvantage() {
                 <img 
                   src="/assets/whyus.png" 
                   className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.1)]"
-                  alt="Premium Travel"
+                  alt="Why choose Orovista Holidays - Premium travel benefits"
                 />
              </motion.div>
           </div>
@@ -107,7 +107,7 @@ export function OrovistaAdvantage() {
                 <img 
                   src="/assets/whyus.png" 
                   className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
-                  alt="Premium Travel"
+                  alt="Why choose Orovista Holidays - Premium travel benefits"
                 />
              </motion.div>
           </div>

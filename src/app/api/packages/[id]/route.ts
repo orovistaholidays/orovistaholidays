@@ -27,6 +27,13 @@ export async function PUT(
     const { id } = await params;
     await dbConnect();
     const body = await request.json();
+    
+    // Auto-generate or update slug if title is present and slug is missing
+    if (!body.slug && body.title) {
+      const { slugify } = await import('@/lib/utils');
+      body.slug = slugify(body.title);
+    }
+
     const updatedPackage = await Package.findByIdAndUpdate(id, body, {
       new: true,
       runValidators: true,
